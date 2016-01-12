@@ -51,7 +51,7 @@
     graph3.detailBackgroundColor = [UIColor colorWithRed:0.444 green:0.842 blue:1.000 alpha:1.000];
     
     graph4 = [[MPGraphView alloc] initWithFrame:graph3.frame];
-    graph4.values = @[@2.5,@2.6,@2.8,@3.8,@3.2,@3.6,@4,@4.5,@2.6,@2.8,@3,@2.8,@3.2];
+    graph4.values = @[@10.5,@2.6,@2.8,@3.8,@3.2,@3.6,@4,@4.5,@2.6,@2.8,@10.0,@2.8,@3.2];
     graph4.fillColors = @[[UIColor orangeColor],[UIColor colorWithRed:1.000 green:0.827 blue:0.000 alpha:1.000]];
     graph4.graphColor = [UIColor redColor];
     graph4.curved = YES;
@@ -61,10 +61,11 @@
     graph5 = [MPPlot plotWithType:MPPlotTypeBars frame:CGRectMake(0, 360, self.view.width, 150)];
     graph5.waitToUpdate = YES;
     graph5.detailView = (UIView <MPDetailView> *)[self customDetailView];
-    [graph5 setAlgorithm:^CGFloat(CGFloat x) {
-        return tan(x);
-    } numberOfPoints:8];
-    graph5.graphColor = [UIColor colorWithRed:0.120 green:0.806 blue:0.157 alpha:1.000];
+    graph5.values = @[@10.5,@2.6,@2.8,@3.8,@3.2,@3.6,@4,@4.5,@12.6,@2.8,@10.0,@2.8,@3.2,@10.5,@2.6,@2.8,@3.8,@3.2,@14.0f,@10.5,@2.6,@2.8,@3.8,@3.2,@3.6,@4,@4.5,@10.5,@2.6,@2.8,@3.8,@3.2,@3.6,@4,@4.5];
+//    [graph5 setAlgorithm:^CGFloat(CGFloat x) {
+//        return tan(x);
+//    } numberOfPoints:8];
+    graph5.graphColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.000];
     [self.view addSubview:graph5];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
